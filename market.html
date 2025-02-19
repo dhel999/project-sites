@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sulu Tourism Marketplace</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon" />
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icon Font Stylesheet -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Template Stylesheet (if available) -->
+  <link href="css/style.css" rel="stylesheet" />
+
+  <!-- Inline Custom Styles for Modern Marketplace -->
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    /* Sticky Dark Navbar */
+    nav.navbar {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    /* Hero Header */
+    .hero-header {
+      background: linear-gradient(135deg, #27ae60, #2980b9);
+      color: #fff;
+      padding: 100px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-header h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    .hero-header p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+    }
+    .hero-search {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-search input {
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 50px;
+      border: none;
+      font-size: 1rem;
+    }
+    .hero-search button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      color: #2980b9;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .hero-search button:hover {
+      background-color: #eaeaea;
+    }
+    /* Discover Sulu Section */
+    .discover-sulu {
+      background: #fff;
+      padding: 40px 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .discover-sulu h2 {
+      font-size: 2rem;
+      color: #27ae60;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .discover-sulu p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    /* Marketplace Grid */
+    .marketplace-item {
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      background-color: #fff;
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+    }
+    .marketplace-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    .marketplace-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid #4caf50;
+    }
+    .marketplace-item h3 {
+      margin: 10px;
+      font-size: 1.3rem;
+      color: #2e7d32;
+      font-weight: 600;
+    }
+    .marketplace-item .price {
+      font-size: 1.1rem;
+      color: #27ae60;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .marketplace-item .index {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #4caf50;
+      color: #fff;
+      font-size: 1rem;
+      padding: 5px 8px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+    /* Spinner */
+    #spinner {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      z-index: 2000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* Footer */
+    footer {
+      background: #0056b3;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    @media (max-width: 600px) {
+      .hero-header h1 {
+        font-size: 2.5rem;
+      }
+      .hero-header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Spinner -->
+  <div id="spinner" class="d-flex">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Navbar (Dark) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+    <a href="#" class="navbar-brand">
+      <h1 class="m-0">
+        <i class="fa fa-map-marker-alt me-2"></i>Sulu Tourism
+      </h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="hotel.html">Hotel</a></li>
+        <li class="nav-item"><a class="nav-link" href="#municipalities">Municipalities</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+      <a href="#" class="btn btn-primary rounded-pill ms-3">Register</a>
+    </div>
+  </nav>
+
+  <!-- Hero Header with Search Bar -->
+  <div class="hero-header">
+    <div class="container">
+      <h1 class="animated slideInDown">Marketplace</h1>
+      <p class="animated slideInDown">Discover our curated collection of products</p>
+      <div class="hero-search animated slideInDown">
+        <input type="text" id="searchInput" placeholder="Search products..." />
+        <button type="button" onclick="filterItems()">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Marketplace Section -->
+  <div class="container my-5">
+    <div class="row" id="marketplaceRow">
+      <!-- Marketplace items will be injected here -->
+    </div>
+  </div>
+
+  <!-- Discover Sulu Section -->
+  <div class="container my-5">
+    <div class="discover-sulu">
+      <h2>Discover Sulu</h2>
+      <p>
+        Sulu is a region rich in culture, history, and natural beauty. From pristine beaches and luxurious resorts to vibrant local markets and traditional festivals, there’s something for everyone in Sulu. Explore breathtaking coastal views, immerse yourself in the local heritage, and experience the unique flavors of Sulu’s cuisine. Whether you’re planning a relaxing vacation or an adventurous getaway, Sulu offers an unforgettable experience.
+      </p>
+      <p>
+        Discover the world-class beaches, sample local delicacies, and witness colorful traditions that make Sulu a hidden gem in the Philippines. Start your journey and explore the diverse attractions that await you.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sulu Tourism. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Firebase & JS Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyDCwb2ODx1CigaKbyTlrkVrmRkXx1QHh0s",
+      authDomain: "sulutourism-e0aa5.firebaseapp.com",
+      databaseURL: "https://sulutourism-e0aa5-default-rtdb.firebaseio.com",
+      projectId: "sulutourism-e0aa5",
+      storageBucket: "sulutourism-e0aa5.appspot.com",
+      messagingSenderId: "397295218347",
+      appId: "1:397295218347:web:df09fa2d9b4cf4589311ee",
+      measurementId: "G-6ZRYQY92BJ"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    let allItems = [];
+
+    // Fetch all items from all categories
+    function fetchMarketplaceItems() {
+      document.getElementById('spinner').style.display = 'flex';
+      firebase.database().ref().once('value').then(snapshot => {
+        allItems = [];
+        snapshot.forEach(categorySnap => {
+          const categoryName = categorySnap.key;
+          categorySnap.forEach(itemSnap => {
+            let item = itemSnap.val();
+            item.key = itemSnap.key;
+            item.category = categoryName;
+            allItems.push(item);
+          });
+        });
+        displayMarketplaceItems(allItems);
+        document.getElementById('spinner').style.display = 'none';
+      }).catch(err => {
+        console.error(err);
+        document.getElementById('spinner').style.display = 'none';
+      });
+    }
+
+    // Display items in the grid (showing image, name, and price)
+    function displayMarketplaceItems(items) {
+      const row = document.getElementById('marketplaceRow');
+      row.innerHTML = "";
+      items.forEach((item, index) => {
+        const col = document.createElement('div');
+        col.className = "col-lg-3 col-md-4 col-sm-6";
+
+        const card = document.createElement('div');
+        card.className = "marketplace-item";
+        card.onclick = () => {
+          // Redirect to product details page with id and category in query string
+          window.location.href = "content-info.html?id=" + item.key + "&category=" + item.category;
+        };
+
+        // Use the first image if available, else a placeholder
+        let imageUrl = "https://via.placeholder.com/400x300?text=No+Image";
+        if (item.imageUrls && item.imageUrls.length > 0) {
+          imageUrl = item.imageUrls[0];
+        }
+        card.innerHTML = `
+          <span class="index">${index + 1}</span>
+          <img src="${imageUrl}" alt="${item.placeName || 'No Name'}">
+          <h3>${item.placeName || "No Name"}</h3>
+          <p class="price">${item.price ? "₱" + item.price : "Price N/A"}</p>
+        `;
+        col.appendChild(card);
+        row.appendChild(col);
+      });
+    }
+
+    // Filter items by search term (searching by product name)
+    function filterItems() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = allItems.filter(item => {
+        return item.placeName && item.placeName.toLowerCase().includes(searchTerm);
+      });
+      displayMarketplaceItems(filtered);
+    }
+
+    window.onload = fetchMarketplaceItems;
+  </script>
+</body>
+</html>

@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Talipao Tourism</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Talipao, Sulu Tourism, Beaches, Food, Culture" name="keywords">
+  <meta content="Discover the hidden treasures of Talipao, Sulu Philippines – from its scenic spots and authentic local cuisine to its rich cultural heritage." name="description">
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template & Combined Custom CSS -->
+  <style>
+    :root {
+      --primary: #86B817;
+      --secondary: #FE8800;
+      --light: #F5F5F5;
+      --dark: #14141F;
+    }
+
+    .fw-medium {
+      font-weight: 600 !important;
+    }
+    .fw-semi-bold {
+      font-weight: 700 !important;
+    }
+    .back-to-top {
+      position: fixed;
+      display: none;
+      right: 45px;
+      bottom: 45px;
+      z-index: 99;
+    }
+    #spinner {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .5s ease-out, visibility 0s linear .5s;
+      z-index: 99999;
+    }
+    #spinner.show {
+      transition: opacity .5s ease-out, visibility 0s linear 0s;
+      visibility: visible;
+      opacity: 1;
+    }
+    .btn {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      transition: .5s;
+    }
+    .btn.btn-primary,
+    .btn.btn-secondary {
+      color: #FFFFFF;
+    }
+    .btn-square {
+      width: 38px;
+      height: 38px;
+    }
+    .btn-sm-square {
+      width: 32px;
+      height: 32px;
+    }
+    .btn-lg-square {
+      width: 48px;
+      height: 48px;
+    }
+    .btn-square,
+    .btn-sm-square,
+    .btn-lg-square {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: normal;
+      border-radius: 0px;
+    }
+    .navbar-light .navbar-nav .nav-link {
+      font-family: 'Nunito', sans-serif;
+      position: relative;
+      margin-right: 25px;
+      padding: 35px 0;
+      color: #FFFFFF !important;
+      font-size: 18px;
+      font-weight: 600;
+      outline: none;
+      transition: .5s;
+    }
+    .sticky-top.navbar-light .navbar-nav .nav-link {
+      padding: 20px 0;
+      color: var(--dark) !important;
+    }
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link.active {
+      color: var(--primary) !important;
+    }
+    .navbar-light .navbar-brand img {
+      max-height: 60px;
+      transition: .5s;
+    }
+    .sticky-top.navbar-light .navbar-brand img {
+      max-height: 45px;
+    }
+    @media (max-width: 991.98px) {
+      .sticky-top.navbar-light {
+        position: relative;
+        background: #FFFFFF;
+      }
+      .navbar-light .navbar-collapse {
+        margin-top: 15px;
+        border-top: 1px solid #DDDDDD;
+      }
+      .navbar-light .navbar-nav .nav-link,
+      .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin-left: 0;
+        color: var(--dark) !important;
+      }
+      .navbar-light .navbar-brand img {
+        max-height: 45px;
+      }
+    }
+    @media (min-width: 992px) {
+      .navbar-light {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(256, 256, 256, .1);
+        z-index: 999;
+      }
+      .sticky-top.navbar-light {
+        position: fixed;
+        background: #FFFFFF;
+      }
+      .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 2px;
+        bottom: -1px;
+        left: 50%;
+        background: var(--primary);
+        transition: .5s;
+      }
+      .navbar-light .navbar-nav .nav-link:hover::before,
+      .navbar-light .navbar-nav .nav-link.active::before {
+        width: calc(100% - 2px);
+        left: 1px;
+      }
+      .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none;
+      }
+    }
+    .hero-header {
+      /* Example: use an image from Talipao folder as background */
+      background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url("img/Talipao/Bud Talipao (1).jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+      color: rgba(255, 255, 255, .5);
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+    .section-title::before {
+      position: absolute;
+      content: "";
+      width: calc(100% + 80px);
+      height: 2px;
+      top: 4px;
+      left: -40px;
+      background: var(--primary);
+      z-index: -1;
+    }
+    .section-title::after {
+      position: absolute;
+      content: "";
+      width: calc(100% + 120px);
+      height: 2px;
+      bottom: 5px;
+      left: -60px;
+      background: var(--primary);
+      z-index: -1;
+    }
+    .section-title.text-start::before {
+      width: calc(100% + 40px);
+      left: 0;
+    }
+    .section-title.text-start::after {
+      width: calc(100% + 60px);
+      left: 0;
+    }
+    .service-item {
+      box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+      transition: .5s;
+    }
+    .service-item:hover {
+      background: var(--primary);
+    }
+    .service-item * {
+      transition: .5s;
+    }
+    .service-item:hover * {
+      color: var(--light) !important;
+    }
+    .destination img {
+      transition: .5s;
+    }
+    .destination a:hover img {
+      transform: scale(1.1);
+    }
+    .package-item {
+      box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    }
+    .package-item img {
+      transition: .5s;
+    }
+    .package-item:hover img {
+      transform: scale(1.1);
+    }
+    .booking {
+      background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7)), url(../img/booking.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .team-item {
+      box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    }
+    .team-item img {
+      transition: .5s;
+    }
+    .team-item:hover img {
+      transform: scale(1.1);
+    }
+    .team-item .btn {
+      background: #FFFFFF;
+      color: var(--primary);
+      border-radius: 20px;
+      border-bottom: 1px solid var(--primary);
+    }
+    .team-item .btn:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+    .testimonial-carousel::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+      z-index: 1;
+    }
+    .testimonial-carousel::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+      z-index: 1;
+    }
+    @media (min-width: 768px) {
+      .testimonial-carousel::before,
+      .testimonial-carousel::after {
+        width: 200px;
+      }
+    }
+    @media (min-width: 992px) {
+      .testimonial-carousel::before,
+      .testimonial-carousel::after {
+        width: 300px;
+      }
+    }
+    .testimonial-carousel .owl-item .testimonial-item,
+    .testimonial-carousel .owl-item.center .testimonial-item * {
+      transition: .5s;
+    }
+    .testimonial-carousel .owl-item.center .testimonial-item {
+      background: var(--primary) !important;
+      border-color: var(--primary) !important;
+    }
+    .testimonial-carousel .owl-item.center .testimonial-item * {
+      color: #FFFFFF !important;
+    }
+    .testimonial-carousel .owl-dots {
+      margin-top: 24px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .testimonial-carousel .owl-dot {
+      position: relative;
+      display: inline-block;
+      margin: 0 5px;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #CCCCCC;
+      border-radius: 15px;
+      transition: .5s;
+    }
+    .testimonial-carousel .owl-dot.active {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .footer .btn.btn-social {
+      margin-right: 5px;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light);
+      font-weight: normal;
+      border: 1px solid #FFFFFF;
+      border-radius: 35px;
+      transition: .3s;
+    }
+    .footer .btn.btn-social:hover {
+      color: var(--primary);
+    }
+    .footer .btn.btn-link {
+      display: block;
+      margin-bottom: 5px;
+      padding: 0;
+      text-align: left;
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: normal;
+      text-transform: capitalize;
+      transition: .3s;
+    }
+    .footer .btn.btn-link::before {
+      position: relative;
+      content: "\f105";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 10px;
+    }
+    .footer .btn.btn-link:hover {
+      letter-spacing: 1px;
+      box-shadow: none;
+    }
+    .footer .copyright {
+      padding: 25px 0;
+      font-size: 15px;
+      border-top: 1px solid rgba(256, 256, 256, .1);
+    }
+    .footer .copyright a {
+      color: var(--light);
+    }
+    .footer .footer-menu a {
+      margin-right: 15px;
+      padding-right: 15px;
+      border-right: 1px solid rgba(255, 255, 255, .1);
+    }
+    .footer .footer-menu a:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      border-right: none;
+    }
+    /********** Enhanced Product Card Styles **********/
+    .product-card {
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    .product-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .product-card .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 1.2rem;
+    }
+    .product-card:hover .card-overlay {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Spinner Start -->
+  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <!-- Spinner End -->
+
+  <!-- Topbar Start -->
+  <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+    <div class="row gx-0">
+      <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+        <div class="d-inline-flex align-items-center" style="height: 45px;">
+          <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Talipao, Sulu, Philippines</small>
+          <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+63 917 123 4567</small>
+          <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@talipaotourism.ph</small>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center text-lg-end">
+        <div class="d-inline-flex align-items-center" style="height: 45px;">
+          <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+          <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+          <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+          <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+          <a class="btn btn-sm btn-outline-light btn-sm-square" href="#"><i class="fab fa-youtube fw-normal"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Topbar End -->
+
+  <!-- Navbar & Hero Start -->
+  <div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+      <a href="#" class="navbar-brand p-0">
+        <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>Talipao</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="about.html" class="nav-item nav-link">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+      <div class="container py-5">
+        <div class="row justify-content-center py-5">
+          <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Discover Talipao, Sulu</h1>
+            <p class="lead text-white mb-4">Explore the rich culture, history, and scenic wonders that Talipao has to offer.</p>
+            <div class="position-relative w-75 mx-auto animated slideInDown">
+       
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Navbar & Hero End -->
+
+  <!-- About Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Image side -->
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+          <div class="position-relative h-100">
+            <!-- Replace with a relevant Talipao image -->
+            <img class="img-fluid position-absolute w-100 h-100" src="img/Talipao/Talipao Municipal Hall (2).jpg" alt="About Talipao" style="object-fit: cover;">
+          </div>
+        </div>
+        <!-- Text side -->
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+          <h6 class="section-title bg-white text-start text-primary pe-3">About Talipao</h6>
+          <h1 class="mb-4">Welcome to <span class="text-primary">Talipao Tourism</span></h1>
+          <p class="mb-4">
+            Talipao, officially the Municipality of Talipao (Tausūg: Kawman sin Talipao; Tagalog: Bayan ng Talipao), is a municipality in the province of Sulu, Philippines. According to the 2015 census, it has a population of 80,255 people.
+          </p>
+          <p class="mb-4">
+            <strong>Etymology:</strong> The municipality of Talipao derived its name from a certain couple, “Tal” and “Pao”, that of the husband’s and wife’s name respectively. From the district of Jolo, it was transformed into a full-pledged municipality on July 1, 1957, under the provision of the Department of Mindanao and Sulu Administrative Code.
+          </p>
+          <p class="mb-4">
+            <strong>Geography:</strong> The Municipality of Talipao’s total area coverage is approximately 497.32 square kilometres or 49,732 hectares. This constitutes more or less 20.63% of Sulu’s total land area. It is bounded on the north by Patikul; on the south by the Sulu Sea; on the east by Panglima Estino; and by Maimbung on its west side.
+          </p>
+          <p class="mb-4">
+            <strong>Barangays:</strong> Talipao is politically subdivided into 52 barangays. Each barangay consists of puroks while some have sitios.  
+            <br><br>
+            <em>Andalan, Bagsak, Bandang, Bilaan (Poblacion), Bud Bunga, Buntod, Buroh, Dalih, Gata, Kabatuhan Bilaan, Kabatuhan Tiis, Kabungkol, Kagay, Kahawa, Kandaga, Kanlibot, Kiutaan, Kuhaw, Kulamboh, Kuttong, Lagtoh, Lambanah, Liban, Liu-Bud Pantao, Lower Binuang, Lower Kamuntayan, Lower Laus, Lower Sinumaan, Lower Talipao, Lumbayao, Lumping Pigih Daho, Lungkiaban, Mabahay, Mahala, Mampallam, Marsada, Mauboh, Mungit-mungit, Niog-Sangahan, Pantao, Samak, Talipao Proper, Tampakan, Tiis, Tinggah, Tubod, Tuyang, Upper Binuang, Upper Kamuntayan, Upper Laus, Upper Sinumaan, Upper Talipao.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About End -->
+
+  <!-- Destination Start -->
+  <div class="container-xxl py-5 destination">
+    <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
+        <h1 class="mb-5">Popular Attractions in Talipao</h1>
+      </div>
+      <div class="row g-3">
+        <!-- Left column -->
+        <div class="col-lg-7 col-md-6">
+          <div class="row g-3">
+            <!-- 1st big image (Bud Talipao) -->
+            <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+              <a class="position-relative d-block overflow-hidden" href="destination.html">
+                <img class="img-fluid" src="img/Talipao/Bud Talipao (1).jpg" alt="Bud Talipao">
+                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                  Bud Talipao
+                </div>
+              </a>
+            </div>
+            <!-- 2nd image (Astana Replica) -->
+            <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+              <a class="position-relative d-block overflow-hidden" href="destination.html">
+                <img class="img-fluid" src="img/Talipao/Astana Replica (1).jpg" alt="Astana Replica">
+                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                  Astana Replica
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+              <a class="position-relative d-block overflow-hidden" href="destination.html">
+                <img class="img-fluid" src="img/Talipao/Astana Replica (2).jpg" alt="Astana Replica (2)">
+                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                  Astana Replica (2)
+                </div>
+              </a>
+            </div>
+            <!-- 3rd image (Sitti Raya Mosque) -->
+            <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+              <a class="position-relative d-block overflow-hidden" href="destination.html">
+                <img class="img-fluid" src="img/Talipao/Sitti Raya Mosque.jpg" alt="Hadja Sitti Raya Mosque">
+                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                  Hadja Sitti Raya Mosque
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+              <a class="position-relative d-block overflow-hidden" href="destination.html">
+                <img class="img-fluid" src="img/Talipao/Talipao Municipal Hall (1).jpg" alt="Talipao Municipal Hall">
+                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                  Talipao Municipal Hall
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Right column -->
+        <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
+          <a class="position-relative d-block h-100 overflow-hidden" href="destination.html">
+            <!-- Another Bud Talipao image or Municipal Hall -->
+            <img class="img-fluid position-absolute w-100 h-100" src="img/Talipao/Bud Talipao (2).jpg" alt="Bud Talipao Scenic" style="object-fit: cover;">
+            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+              Scenic View
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Destination End -->
+
+  <!-- Dynamic Content Section (Enhanced Product View via Firebase) -->
+  <div class="container-xxl py-5">
+    <div class="container" id="dynamic-sections"></div>
+  </div>
+  <!-- End of Dynamic Content -->
+
+  <!-- Footer Start -->
+  <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Company</h4>
+          <a class="btn btn-link" href="about.html">About Us</a>
+          <a class="btn btn-link" href="contact.html">Contact Us</a>
+          <a class="btn btn-link" href="#">Privacy Policy</a>
+          <a class="btn btn-link" href="#">Terms & Condition</a>
+          <a class="btn btn-link" href="#">FAQs & Help</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Contact</h4>
+          <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Talipao, Sulu, Philippines</p>
+          <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+63 917 123 4567</p>
+          <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@talipaotourism.ph</p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Gallery</h4>
+          <div class="row g-2 pt-2">
+            <!-- Small gallery images from your Talipao folder -->
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="img/Talipao/Bud Talipao (1).jpg" alt="">
+            </div>
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="img/Talipao/Astana Replica (1).jpg" alt="">
+            </div>
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="img/Talipao/Sitti Raya Mosque.jpg" alt="">
+            </div>
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="img/Talipao/Talipao Municipal Hall (1).jpg" alt="">
+            </div>
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="img/Talipao/Bud Talipao (2).jpg" alt="">
+            </div>
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="img/Talipao/Astana Replica (2).jpg" alt="">
+            </div>
+          </div>
+        </div>
+     
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a class="border-bottom" href="#">TalipaoTourism.ph</a>, All Rights Reserved.
+            Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="footer-menu">
+              <a href="index.html">Home</a>
+              <a href="#">Cookies</a>
+              <a href="#">Help</a>
+              <a href="#">FAQs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/tempusdominus/js/moment.min.js"></script>
+  <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+  <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+
+  <!-- Firebase Libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script>
+    // Firebase configuration (same as your existing project)
+    const firebaseConfig = {
+      apiKey: "AIzaSyDCwb2ODx1CigaKbyTlrkVrmRkXx1QHh0s",
+      authDomain: "sulutourism-e0aa5.firebaseapp.com",
+      databaseURL: "https://sulutourism-e0aa5-default-rtdb.firebaseio.com",
+      projectId: "sulutourism-e0aa5",
+      storageBucket: "sulutourism-e0aa5.appspot.com",
+      messagingSenderId: "397295218347",
+      appId: "1:397295218347:web:df09fa2d9b4cf4589311ee",
+      measurementId: "G-6ZRYQY92BJ"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Define categories with their Firebase database keys and display titles
+    const categories = [
+      { key: 'beaches_and_resorts', title: 'Beaches and Resorts' },
+      { key: 'foods', title: 'Foods' },
+      { key: 'products', title: 'Products' },
+      { key: 'souvenirs', title: 'Souvenirs' },
+      { key: 'traditional_attire', title: 'Traditional Attire' },
+      { key: 'Parks_and_Boulevards', title: 'Parks and Boulevards' }
+    ];
+
+    // Enhanced fetch and render function using Bootstrap cards
+    function fetchAndRenderCategory(category, municipality) {
+      const dbRef = firebase.database().ref(category.key);
+      dbRef.get().then(snapshot => {
+        if (snapshot.exists()) {
+          // Main container for the section
+          const section = document.createElement('div');
+          section.classList.add('section', 'mb-5');
+
+          // -- START: Centered Category Title --
+          const titleWrapper = document.createElement('div');
+          titleWrapper.classList.add('text-center', 'wow', 'fadeInUp');
+          titleWrapper.setAttribute('data-wow-delay', '0.1s');
+
+          // Create an H6 with the existing "section-title" style
+          const titleEl = document.createElement('h6');
+          titleEl.classList.add('section-title', 'bg-white', 'text-center', 'text-primary', 'px-3');
+          titleEl.textContent = category.title;
+
+          titleWrapper.appendChild(titleEl);
+          section.appendChild(titleWrapper);
+          // -- END: Centered Category Title --
+
+          // Create a Bootstrap row for the product cards
+          const row = document.createElement('div');
+          row.classList.add('row', 'g-4', 'mt-4');
+
+          snapshot.forEach(childSnapshot => {
+            const data = childSnapshot.val();
+            const key = childSnapshot.key;
+            // Only include items where municipality equals "Talipao"
+            if (data.municipality === municipality) {
+              // Create a Bootstrap column
+              const col = document.createElement('div');
+              col.classList.add('col-md-4', 'col-lg-3');
+
+              // Create a card container
+              const card = document.createElement('div');
+              card.classList.add('card', 'product-card');
+
+              // Card image
+              const img = document.createElement('img');
+              img.classList.add('card-img-top');
+              img.src = data.imageUrls ? data.imageUrls[0] : 'default-image.jpg';
+              img.alt = data.placeName || 'No Name';
+
+              // Card body
+              const cardBody = document.createElement('div');
+              cardBody.classList.add('card-body');
+
+              // Card title
+              const cardTitle = document.createElement('h5');
+              cardTitle.classList.add('card-title');
+              cardTitle.textContent = data.placeName || 'No Name';
+
+              // Price (if available)
+              if (data.price) {
+                const price = document.createElement('p');
+                price.classList.add('card-text');
+                price.textContent = `Price: ${data.price}`;
+                cardBody.appendChild(price);
+              }
+
+              // Location (if available)
+              if (data.locationName) {
+                const location = document.createElement('p');
+                location.classList.add('card-text');
+                location.innerHTML = `<small class="text-muted">${data.locationName}</small>`;
+                cardBody.appendChild(location);
+              }
+
+              // Append elements to card
+              cardBody.prepend(cardTitle);
+              card.appendChild(img);
+              card.appendChild(cardBody);
+
+              // Overlay for hover
+              const overlay = document.createElement('div');
+              overlay.classList.add('card-overlay');
+              overlay.textContent = "View Details";
+              card.appendChild(overlay);
+
+              // Click event to redirect to detailed info
+              card.onclick = () => {
+                window.location.href = `content-info.html?id=${key}&category=${category.key}`;
+              };
+
+              col.appendChild(card);
+              row.appendChild(col);
+            }
+          });
+
+          section.appendChild(row);
+          document.getElementById('dynamic-sections').appendChild(section);
+        }
+      }).catch(error => console.error('Error fetching data:', error));
+    }
+
+    window.addEventListener('load', function () {
+      // Set municipality to "Talipao"
+      const municipality = 'Talipao';
+      categories.forEach(category => {
+        fetchAndRenderCategory(category, municipality);
+      });
+    });
+  </script>
+</body>
+</html>

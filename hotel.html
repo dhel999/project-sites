@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sulu Hotels</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Sulu Hotels, Sulu Accommodations, Sulu Travel" name="keywords">
+    <meta content="Discover top hotels across Sulu, Philippines – from beachside resorts to cozy boutique stays." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" 
+      rel="stylesheet"
+    >
+
+    <!-- Icon Font Stylesheet -->
+    <link 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" 
+      rel="stylesheet"
+    >
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" 
+      rel="stylesheet"
+    >
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link 
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" 
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light">
+                        <i class="fa fa-map-marker-alt me-2"></i>Sulu, Philippines
+                    </small>
+                    <small class="me-3 text-light">
+                        <i class="fa fa-phone-alt me-2"></i>+63 917 123 4567
+                    </small>
+                    <small class="text-light">
+                        <i class="fa fa-envelope-open me-2"></i>info@suluhotels.ph
+                    </small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#">
+                        <i class="fab fa-twitter fw-normal"></i>
+                    </a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#">
+                        <i class="fab fa-facebook-f fw-normal"></i>
+                    </a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#">
+                        <i class="fab fa-linkedin-in fw-normal"></i>
+                    </a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square me-2" href="#">
+                        <i class="fab fa-instagram fw-normal"></i>
+                    </a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square" href="#">
+                        <i class="fab fa-youtube fw-normal"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="#" class="navbar-brand p-0">
+                <h1 class="text-primary m-0">
+                    <i class="fa fa-map-marker-alt me-3"></i>Sulu Hotels
+                </h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="hotels.html" class="nav-item nav-link active">Hotels</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Sulu Hotels</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item">
+                                  <a href="#">Home</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                  <a href="#">Hotels</a>
+                                </li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">
+                                  All Sulu Hotels
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Hotels Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Hotels in Sulu</h6>
+                <h1 class="mb-5">Find Your Perfect Stay</h1>
+            </div>
+            <div class="row g-4">
+                <!-- Hotel Card 1: Sulu Peacekeepers Inn -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/hotels/sulu-peacekeepers-inn.jpg" alt="Sulu Peacekeepers Inn">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- Optional: Icons for rating or location -->
+                            <a class="btn btn-square mx-1" href="#"><i class="fas fa-star"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fas fa-map-marker-alt"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fas fa-share"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">
+                                <a href="https://www.google.com/travel/search?q=sulu%20hotels&g2lb=4965990%2C4969803%2C72248047%2C..." 
+                                   target="_blank"
+                                   style="text-decoration: none; color: inherit;">
+                                    Sulu Peacekeepers Inn
+                                </a>
+                            </h5>
+                            <small>Jolo, Sulu</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel Card 2: Bay Natuh Boutique Hotel -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/hotels/bay-natuh-boutique.jpg" alt="Bay Natuh Boutique Hotel">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href="#"><i class="fas fa-star"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fas fa-map-marker-alt"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fas fa-share"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">
+                                <a href="https://www.google.com/travel/search?q=sulu%20hotels&g2lb=4965990%2C4969803%2C72248047%2C..." 
+                                   target="_blank"
+                                   style="text-decoration: none; color: inherit;">
+                                    Bay Natuh Boutique Hotel
+                                </a>
+                            </h5>
+                            <small>Luuk, Sulu</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel Card 3: A N R Hotel (no direct link provided) -->
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/hotels/anr-hotel.jpg" alt="A N R Hotel">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href="#"><i class="fas fa-star"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fas fa-map-marker-alt"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fas fa-share"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">
+                                <a href="#" 
+                                   style="text-decoration: none; color: inherit;">
+                                    A N R Hotel
+                                </a>
+                            </h5>
+                            <small>Patikul, Sulu</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more hotel cards as needed -->
+            </div>
+        </div>
+    </div>
+    <!-- Hotels End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Company</h4>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="#">Privacy Policy</a>
+                    <a class="btn btn-link" href="#">Terms & Condition</a>
+                    <a class="btn btn-link" href="#">FAQs & Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2">
+                        <i class="fa fa-map-marker-alt me-3"></i>Sulu, Philippines
+                    </p>
+                    <p class="mb-2">
+                        <i class="fa fa-phone-alt me-3"></i>+63 917 123 4567
+                    </p>
+                    <p class="mb-2">
+                        <i class="fa fa-envelope me-3"></i>info@suluhotels.ph
+                    </p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="#">
+                          <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-social" href="#">
+                          <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-social" href="#">
+                          <i class="fab fa-youtube"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-social" href="#">
+                          <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/Panglima Estino/picture1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/Panglima Estino/picture2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/Panglima Estino/picture3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/Panglima Estino/picture4.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/Panglima Estino/embong.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/Panglima Estino/picture5.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">SuluHotels.ph</a>, All Rights Reserved.
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="#">Cookies</a>
+                            <a href="#">Help</a>
+                            <a href="#">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Firebase Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script>
+        // Firebase configuration (replace with your actual credentials)
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DB_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID",
+            measurementId: "YOUR_MEASUREMENT_ID"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        // Define categories with their Firebase database keys and display titles
+        const categories = [
+            { key: 'beaches_and_resorts', title: 'Beaches and Resorts' },
+            { key: 'foods', title: 'Foods' },
+            { key: 'products', title: 'Products' },
+            { key: 'souvenirs', title: 'Souvenirs' },
+            { key: 'traditional_attire', title: 'Traditional Attire' },
+            { key: 'Parks_and_Boulevards', title: 'Parks and Boulevards' }
+        ];
+
+        // Enhanced fetch and render function using Bootstrap cards
+        function fetchAndRenderCategory(category, municipality) {
+            const dbRef = firebase.database().ref(category.key);
+            dbRef.get().then(snapshot => {
+                if (snapshot.exists()) {
+                    // Main container for the section
+                    const section = document.createElement('div');
+                    section.classList.add('section', 'mb-5');
+
+                    // -- START: Centered Category Title --
+                    const titleWrapper = document.createElement('div');
+                    titleWrapper.classList.add('text-center', 'wow', 'fadeInUp');
+                    titleWrapper.setAttribute('data-wow-delay', '0.1s');
+
+                    // Create an H6 with the existing "section-title" style
+                    const titleEl = document.createElement('h6');
+                    titleEl.classList.add('section-title', 'bg-white', 'text-center', 'text-primary', 'px-3');
+                    titleEl.textContent = category.title;
+
+                    titleWrapper.appendChild(titleEl);
+                    section.appendChild(titleWrapper);
+                    // -- END: Centered Category Title --
+
+                    // Create a Bootstrap row for the product cards
+                    const row = document.createElement('div');
+                    row.classList.add('row', 'g-4', 'mt-4');
+
+                    snapshot.forEach(childSnapshot => {
+                        const data = childSnapshot.val();
+                        const key = childSnapshot.key;
+                        // Only include items where municipality equals "Panglima Estino"
+                        if (data.municipality === municipality) {
+                            // Create a Bootstrap column
+                            const col = document.createElement('div');
+                            col.classList.add('col-md-4', 'col-lg-3');
+
+                            // Create a card container
+                            const card = document.createElement('div');
+                            card.classList.add('card', 'product-card');
+
+                            // Card image
+                            const img = document.createElement('img');
+                            img.classList.add('card-img-top');
+                            img.src = data.imageUrls ? data.imageUrls[0] : 'default-image.jpg';
+                            img.alt = data.placeName || 'No Name';
+
+                            // Card body
+                            const cardBody = document.createElement('div');
+                            cardBody.classList.add('card-body');
+
+                            // Card title
+                            const cardTitle = document.createElement('h5');
+                            cardTitle.classList.add('card-title');
+                            cardTitle.textContent = data.placeName || 'No Name';
+
+                            // Price (if available)
+                            if (data.price) {
+                                const price = document.createElement('p');
+                                price.classList.add('card-text');
+                                price.textContent = `Price: ${data.price}`;
+                                cardBody.appendChild(price);
+                            }
+
+                            // Location (if available)
+                            if (data.locationName) {
+                                const location = document.createElement('p');
+                                location.classList.add('card-text');
+                                location.innerHTML = `<small class="text-muted">${data.locationName}</small>`;
+                                cardBody.appendChild(location);
+                            }
+
+                            // Append elements to card
+                            cardBody.prepend(cardTitle);
+                            card.appendChild(img);
+                            card.appendChild(cardBody);
+
+                            // Overlay for hover
+                            const overlay = document.createElement('div');
+                            overlay.classList.add('card-overlay');
+                            overlay.textContent = "View Details";
+                            card.appendChild(overlay);
+
+                            // Click event to redirect to detailed info
+                            card.onclick = () => {
+                                window.location.href = `content-info.html?id=${key}&category=${category.key}`;
+                            };
+
+                            col.appendChild(card);
+                            row.appendChild(col);
+                        }
+                    });
+
+                    section.appendChild(row);
+                    document.getElementById('dynamic-sections').appendChild(section);
+                }
+            }).catch(error => console.error('Error fetching data:', error));
+        }
+
+        window.addEventListener('load', function () {
+            // Set municipality to "Panglima Estino"
+            const municipality = 'Panglima Estino';
+            categories.forEach(category => {
+                fetchAndRenderCategory(category, municipality);
+            });
+        });
+    </script>
+</body>
+</html>

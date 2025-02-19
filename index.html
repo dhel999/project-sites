@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sulu Tourism</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icon Font Stylesheet -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <link
+    href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+
+  <!-- Inline Custom Styles -->
+  <style>
+    body {
+      background-color: #f9f9f9;
+    }
+    .municipality {
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+    .municipality:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .municipality img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid #4caf50;
+    }
+    .municipality h3 {
+      margin: 10px;
+      font-size: 1.3rem;
+      color: #2e7d32;
+    }
+    .municipality p {
+      margin: 0 10px 15px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .municipality .index {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #4caf50;
+      color: #fff;
+      font-size: 1rem;
+      padding: 5px 8px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Spinner (from template) -->
+  <div
+    id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+  >
+    <div
+      class="spinner-border text-primary"
+      style="width: 3rem; height: 3rem;"
+      role="status"
+    >
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <!-- End Spinner -->
+
+  <!-- Topbar Start (from template) -->
+  <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+    <!-- ... topbar content ... -->
+  </div>
+  <!-- Topbar End -->
+
+  <!-- Navbar & Hero Start (from template) -->
+  <div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+      <a href="#" class="navbar-brand p-0">
+        <h1 class="text-primary m-0">
+          <i class="fa fa-map-marker-alt me-3"></i>Sulu Tourism
+        </h1>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+          <a href="#" class="nav-item nav-link active">Home</a>
+          <a href="hotel.html" class="nav-item nav-link">Hotel</a>
+          <a href="market.html" class="nav-item nav-link">Market</a>
+          <a href="#municipalities" class="nav-item nav-link">Municipalities</a>
+          <a href="about.html" class="nav-item nav-link">About</a>
+          <a href="#" class="nav-item nav-link">Contact</a>
+        </div>
+       
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+      <div class="container py-5">
+        <div class="row justify-content-center py-5">
+          <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">
+              Sulu Tourism Gateway A Digital Platform for Sustainable Tourism Development & Marketing
+            </h1>
+            <p class="fs-4 text-white mb-4 animated slideInDown">
+              Discover the 19 Municipalities of Sulu Province
+              
+            </p>
+            <p class="fs-4 text-white mb-4 animated slideInDown">
+              
+              Experience Its Vibrant Culture &amp; Natural Beauty
+            </p>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Navbar & Hero End -->
+
+  <!-- Municipality Section -->
+  <div class="container-xxl py-5" id="municipalities">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h6 class="section-title bg-white text-center text-primary px-3">
+          Sulu Province
+        </h6>
+        <h1 class="mb-4">Our Municipalities</h1>
+      </div>
+      <!-- Bootstrap row to display municipality cards -->
+      <div class="row g-4" id="municipalityRow">
+        <!-- Cards inserted by JS below -->
+      </div>
+    </div>
+  </div>
+  <!-- Municipality Section End -->
+
+  <!-- Footer Start (from template) -->
+  <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn">
+    <!-- ... footer content ... -->
+  </div>
+  <!-- Footer End -->
+
+  <!-- Back to Top -->
+  <a
+    href="#"
+    class="btn btn-lg btn-primary btn-lg-square back-to-top"
+    ><i class="bi bi-arrow-up"></i
+  ></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/tempusdominus/js/moment.min.js"></script>
+  <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+  <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+
+  <!-- Municipality Script -->
+  <script>
+    // Example data with .link property pointing to each municipality's page
+    const municipalities = [
+      { 
+        name: "Jolo", 
+        description: "The capital of Sulu and a hub of commerce.", 
+        image: "img/jolo-banner.jpg", 
+        link: "jolo.html" 
+      },
+      { 
+        name: "Maimbung", 
+        description: "Known for its historical significance.", 
+        image: "img/maimbung.jpg", 
+        link: "maimbung.html" 
+      },
+      { 
+        name: "Parang", 
+        description: "A scenic municipality with rich culture.", 
+        image: "img/parang.jpg", 
+        link: "parang.html" 
+      },
+      { 
+        name: "Indanan", 
+        description: "Home to stunning beaches and forests.", 
+        image: "img/indanan.jpg", 
+        link: "indanan.html" 
+      },
+      { 
+        name: "Pata", 
+        description: "Known for its beautiful landscapes.", 
+        image: "img/pata.jpg", 
+        link: "pata.html" 
+      },
+      { 
+        name: "Lugus", 
+        description: "A serene municipality with great views.", 
+        image: "img/lugus.jpg", 
+        link: "lugus.html" 
+      },
+      { 
+        name: "Siasi", 
+        description: "Famous for its seafood and natural beauty.", 
+        image: "img/siasi.jpg", 
+        link: "siasi.html" 
+      },
+      { 
+        name: "Pangutaran", 
+        description: "An island municipality with charm.", 
+        image: "img/pangutaran.jpg", 
+        link: "pangutaran.html" 
+      },
+      { 
+        name: "Talipao", 
+        description: "Rich in culture and heritage.", 
+        image: "img/talipao.jpg", 
+        link: "talipao.html" 
+      },
+      { 
+        name: "Pandami", 
+        description: "Known for its vibrant festivals.", 
+        image: "img/pandami.jpg", 
+        link: "pandami.html" 
+      },
+      { 
+        name: "Tapul", 
+        description: "A peaceful island municipality.", 
+        image: "img/tapul.jpg", 
+        link: "tapul.html" 
+      },
+      { 
+        name: "Banguingui", 
+        description: "A hidden gem in Sulu.", 
+        image: "img/banguingui/picture 13.jpg", 
+        link: "Banguingui.html" 
+      },
+      { 
+        name: "Hadji Panglima Tahil", 
+        description: "Offers unique cultural experiences.", 
+        image: "img/bangas.jpg", 
+        link: "hadji-panglima-tahil.html" 
+      },
+      { 
+        name: "Patikul", 
+        description: "A town with historical landmarks.", 
+        image: "img/patikul.jpg", 
+        link: "patikul.html" 
+      },
+      { 
+        name: "Kalingalan Caluang", 
+        description: "Known for its friendly locals.", 
+        image: "img/caluang.jpg", 
+        link: "kalingalan-caluang.html" 
+      },
+      { 
+        name: "Luuk", 
+        description: "Rich in traditions and local crafts.", 
+        image: "img/luuk.jpg", 
+        link: "luuk.html" 
+      },
+      { 
+        name: "Old Panamao", 
+        description: "A town with breathtaking scenery.", 
+        image: "img/panamoa.jpg", 
+        link: "old-panamao.html" 
+      },
+      { 
+        name: "Panglima Estino", 
+        description: "Known for its warm hospitality.", 
+        image: "img/estino.jpg", 
+        link: "panglima-estino.html" 
+      },
+      { 
+        name: "Omar", 
+        description: "A small town with big charm.", 
+        image: "img/omar.jpg", 
+        link: "omar.html" 
+      },
+    ];
+
+    const municipalityRow = document.getElementById("municipalityRow");
+
+    municipalities.forEach((municipality, index) => {
+      // Create a column
+      const col = document.createElement("div");
+      col.classList.add("col-lg-3", "col-md-6"); // 4 across on lg, 2 across on md, etc.
+
+      // Create the card
+      const card = document.createElement("div");
+      card.classList.add("municipality", "position-relative");
+
+      // Fill the card’s HTML
+      card.innerHTML = `
+        <span class="index">${index + 1}</span>
+        <img src="${municipality.image}" alt="${municipality.name}" />
+        <h3>${municipality.name}</h3>
+        <p>${municipality.description}</p>
+      `;
+
+      // On click, go to the municipality's page
+      card.addEventListener("click", () => {
+        window.location.href = municipality.link;
+      });
+
+      col.appendChild(card);
+      municipalityRow.appendChild(col);
+    });
+  </script>
+</body>
+</html>
